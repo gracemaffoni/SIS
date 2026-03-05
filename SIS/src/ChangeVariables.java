@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class ChangeVariables
 
 	{
+		static int studentGradeChange;
+		static int firstGrade;
+		static int secondGrade;
+		static int thirdGrade;
 		static int studentClassChange;
 		static int firstClass;
 		static int secondClass;
@@ -10,6 +14,7 @@ public class ChangeVariables
 		static String newClass;
 		static String initialClassGrade;
 		static String newClassGrade;
+		
 	// This class is used to change student grades and schedules
 	// changeClass() now functions properly
 		static Scanner userInput = new Scanner(System.in);
@@ -21,11 +26,53 @@ public class ChangeVariables
 				{
 					//new variable of grade
 					String newgrade;
+	               
 					
-					System.out.println("Would you like to change a students Grade?"
-							+ "1) Yes"
-							+ "2) No");
+					 
+						 {
+							 System.out.println("Who's Grade do you wish to change?:");
+							 for (int i = 0; i < TextFile.directory.size(); i++)
+									{
+										System.out.println(i+1 + ") " +TextFile.directory.get(i).getFirstName() + " " + TextFile.directory.get(i).getLastName() + ":");
+										System.out.println("Period 1: " + TextFile.directory.get(i).getFirstPeriod() + ": " + TextFile.directory.get(studentClassChange).getFirstGrade());
+										System.out.println("Period 2: " + TextFile.directory.get(i).getSecondPeriod()+ ": " + TextFile.directory.get(studentClassChange).getSecondGrade());
+										System.out.println("Period 3: " + TextFile.directory.get(i).getThirdPeriod()+ ": " + TextFile.directory.get(studentClassChange).getThirdGrade());
+										System.out.println(" ");
+									}
+							 System.out.println("Enter the number of the student whose grade you wish to change.");
+							 studentGradeChange = (userIntInput.nextInt()) - 1;
+							 System.out.println("You have selected " + TextFile.directory.get(studentClassChange).getFirstName() + " " + TextFile.directory.get(studentClassChange).getLastName());
+								System.out.println("Their Grades are:");
+								System.out.println("Period 1 Grade: " + TextFile.directory.get(studentGradeChange).getFirstPeriod() + ": " + TextFile.directory.get(studentClassChange).getFirstGrade());
+								System.out.println("Period 2 Grade: " + TextFile.directory.get(studentGradeChange).getSecondPeriod() + ": " + TextFile.directory.get(studentClassChange).getSecondGrade());
+								System.out.println("Period 3 Grade: " + TextFile.directory.get(studentGradeChange).getThirdPeriod() + ": " + TextFile.directory.get(studentClassChange).getThirdGrade());
+						
+								// person put in student, then puts in class 
+								//
+								// when asked for new grade changeGrade = (userStringInput.nextLine)
+								//  for example, if person desires to change first period gradr, use command TextFiledirectory.get(studentGradeChange).setFirstGrade(changeGrade) 
+								// if (gradeToChange == 1)
+									//{
+										//TextFiledirectory.get(studentGradeChange).setFirstGrade(changeGrade) 
+									//}
+								// if (gradeToChange = 2)
+								//	{
+								//TextFiledirectory.get(studentGradeChange).setSecondGrade(changeGrade) 
+								//	}
+							 
+						 }
+					
+					
+					
+						
+					
+					//double newGrade= userInput.nextDouble()
+					//TextFile.directory.setGrade(newGrade);
+					
+					
+					
 				}
+			
 			public static void changeClass()
 			{
 				System.out.println("Change a student's class:");
